@@ -36,5 +36,4 @@ public class RacingCarTest {
         ViewUtil.playView(cars);
         ViewUtil.resultView(cars);
     }
-
 }

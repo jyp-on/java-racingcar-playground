@@ -6,7 +6,7 @@ public class ViewUtil {
     public static void playView(List<Car> carList) {
         for (int i = 0; i < carList.size(); i++) {
             Car car = carList.get(i);
-            System.out.println(car.getName() + " : " + "-".repeat(car.getLocation()));
+            System.out.println(car.getName() + " : " + repeatString("-", car.getLocation()));
         }
     }
 
@@ -31,5 +31,13 @@ public class ViewUtil {
                 .mapToInt(x -> x)
                 .max()
                 .orElseThrow(NoSuchElementException::new);
+    }
+
+    public static String repeatString(String target, int count) {
+        String sum = target;
+        for (int i = 0; i < count - 1; i++) {
+            sum = sum.concat(target);
+        }
+        return sum;
     }
 }
