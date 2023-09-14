@@ -8,7 +8,7 @@ public class Car {
     }
 
     public void move() {
-        this.location += 1;
+        if (RacingUtil.createRandomValue() >= 4) this.location += 1;
     }
 
     public String getName() {

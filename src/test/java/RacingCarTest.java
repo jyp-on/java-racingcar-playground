@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -35,5 +36,13 @@ public class RacingCarTest {
         cars.get(1).move();
         ViewUtil.playView(cars);
         ViewUtil.resultView(cars);
+    }
+
+    @Test
+    public void moveAllCar() {
+        String[] carNameList = RacingUtil.splitCarName("pobi, crong, honux");
+        List<Car> cars = RacingUtil.makeCarList(carNameList);
+        RacingUtil.moveAllCar(cars);
+        System.out.println(cars.stream().map(Car::getLocation).collect(Collectors.toList()).toString());
     }
 }

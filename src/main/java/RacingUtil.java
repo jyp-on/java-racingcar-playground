@@ -25,4 +25,8 @@ public class RacingUtil {
         return random.nextInt(10);
     }
 
+
+    public static void moveAllCar(List<Car> cars) {
+        cars.forEach(Car::move);
+    }
 }
